@@ -1,5 +1,20 @@
-/* Vous pouvez écrire votre CSS */
+@import 'tailwindcss';
 
-h1 {
-  color: red;
+.cell {
+  @apply border border-gray-950 aspect-square;
+}
+
+.drop-anim {
+  transform: scale(0.2);
+  opacity: 0;
+  animation: pop 220ms ease forwards;
+}
+@keyframes pop {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.col-btn:hover {
+  transform: translateY(-6px);
 }

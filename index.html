@@ -6,10 +6,51 @@
     <link rel="stylesheet" href="/src/style.css" />
     <title>Vanilla Starter</title>
   </head>
-  <body>
-    <div id="app">
-      <h1 onclick="changeColor()">Bienvenue sur votre starter !</h1>
-    </div>
+  <body class="bg-slate-50 min-h-screen flex items-center justify-center p-6">
+    <main class="w-full max-w-3xl">
+      <header class="mb-6 text-center">
+        <h1 class="text-2xl md:text-3xl font-semibold">
+          Puissance 4 — Grille 7×6
+        </h1>
+      </header>
+
+      <section class="flex items-center justify-between mb-4 gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-4 h-4 rounded-full bg-red-500 shadow-sm"></div>
+          <span class="text-sm">Joueur 1</span>
+          <div class="w-4 h-4 rounded-full bg-yellow-400 shadow-sm ml-4"></div>
+          <span class="text-sm">Joueur 2</span>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div
+            id="current"
+            class="px-3 py-1 rounded-full bg-white border text-sm shadow"
+          >
+            Joueur: <strong id="player-name">1 (rouge)</strong>
+          </div>
+          <button
+            id="reset"
+            class="px-3 py-1 bg-slate-800 text-white rounded hover:bg-slate-700 text-sm"
+          >
+            Réinitialiser
+          </button>
+        </div>
+      </section>
+
+      <div id="board-wrap" class="bg-sky-700/80 p-4 rounded-2xl shadow-lg">
+        <div id="col-buttons" class="flex justify-between mb-2 gap-2"></div>
+        <div
+          id="board"
+          class="grid grid-cols-7 gap-3 bg-sky-600/40 p-0 rounded-lg justify-items-center"
+        ></div>
+      </div>
+
+      <p
+        id="winner"
+        class="hidden mt-4 text-center text-xl font-bold text-emerald-600"
+      ></p>
+    </main>
     <script src="/src/main.js"></script>
   </body>
 </html>
